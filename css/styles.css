@@ -83,7 +83,7 @@ img{
 /* header */
 .page-header{
 	border-bottom: 1px solid var(--border-color);
-}
+	}
 
 .header-container{
 	display: flex;
@@ -315,6 +315,26 @@ margin-left: 93px;
 	margin-right: 0;
 }
 
+.technology-thumb{
+	position: relative;
+}
+
+.technology-text{
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	padding-top: 27px;
+	padding-bottom: 27px;
+
+	color: var(--main-white-color);
+	background: rgba(47, 48, 58, 0.8);
+	
+	font-weight: 700;
+	line-height: 1.14;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 
 /* Our team */
 .team-section{
@@ -322,8 +342,8 @@ margin-left: 93px;
 }
 
 .team-list{
-display: flex;
-margin-top: 50px;
+	display: flex;
+	margin-top: 50px;
 }
 
 .team-item {
