@@ -11,6 +11,7 @@
 	--border-color: #ECECEC;
 	--background-hero-color: #C4C4C4;
 	--icons-color: #AFB1B8;
+	--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -59,6 +60,8 @@ img{
 .link {
 	text-decoration: none;
 	color: inherit;
+
+	transition: color 250ms var(--timing-function);
 }
 
 .link:hover,
@@ -105,6 +108,8 @@ img{
 
 .logo-header{
 	color: var(--logo-main-color);
+
+	transition: color 250ms var(--timing-function);
 }
 
 
@@ -254,6 +259,7 @@ img{
 	margin-right: auto;
 	margin-top: 30px;
 	
+	transition: background-color 250ms var(--timing-function);
 }
 
 .hero-button:hover,
@@ -273,6 +279,10 @@ width: 100%;
 height: 100%;
 
 background-color: rgba(0, 0, 0, 0.2);
+
+opacity: 1;
+transition: opacity 250ms var(--timing-function);
+
 }
 
 .backdrop.is-hidden{
@@ -281,16 +291,24 @@ background-color: rgba(0, 0, 0, 0.2);
 	/* visibility: hidden; ? */
 }
 
+.backdrop.is-hidden .modal{
+	transform: scale(0.5) translate(-50%, -50%);
+}
+
 .modal{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	/* transform: translate(-50%, -50%); */
 	
 	width: 528px;
 	height: 581px;
 	
 	background-color: var(--main-white-color);
+
+	transform: scale(1) translate(-50%, -50%);
+
+	transition: transform 250ms var(--timing-function);
 }
 
 .modal-button{
@@ -464,6 +482,8 @@ margin-bottom: 10px;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
+
+	transition: background-color 250ms var(--timing-function);
 }
 
 .social-link:hover,
@@ -473,6 +493,8 @@ margin-bottom: 10px;
 
 .social-icon{
 	fill: var(--icons-color);
+
+	transition: fill 250ms var(--timing-function);
 }
 
 .social-link:hover .social-icon,
@@ -501,13 +523,18 @@ margin-bottom: 10px;
 
 	border: 1px solid #AFB1B8;
 	border-radius: 4px;
+
+	transition: border 250ms var(--timing-function);
 }
 
 .customers-icon{
 	fill: var(--icons-color);
+
+	transition: fill 250ms var(--timing-function);
 }
 
-.customers-link:hover{
+.customers-link:hover,
+.customers-link:focus{
 	border: 1px solid #2196F3;
 }
 .customers-link:hover .customers-icon,
@@ -528,6 +555,8 @@ margin-bottom: 10px;
 }
 .logo-footer{
 	color: var(--main-white-color);
+
+	transition: color 250ms var(--timing-function);
 }
 
 .logo-footer:hover,
@@ -574,7 +603,7 @@ margin-bottom: 10px;
 	display: flex;
 	justify-content: center;
 	gap: 10px;
-	}
+}
 
 
 .network-link {
@@ -584,7 +613,9 @@ margin-bottom: 10px;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+
+	transition: background-color 250ms var(--timing-function);
 }
 
 .network-link:hover,
@@ -618,6 +649,8 @@ margin-bottom: 10px;
 	border: 0;
 	border-radius: 4px;
 	background: #F5F4FA;
+
+	transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-button:hover,
@@ -626,7 +659,6 @@ margin-bottom: 10px;
 	background-color: var(--accent-color);
 
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-	
 }
 
 /* portfolio-work */
@@ -659,6 +691,8 @@ calc (100% - {	сумма зазоров в строке * значение ма
 	text-decoration: none;
 	color: inherit;
 	display: block;
+
+	transition: box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-link:hover,
@@ -680,8 +714,6 @@ calc (100% - {	сумма зазоров в строке * значение ма
 
 /* overlay */
 
-
-
 .overlay{
 	position: absolute;
 
@@ -692,12 +724,11 @@ calc (100% - {	сумма зазоров в строке * значение ма
 
 	top: 294px;
 	left: 0;
-	
-	
+
 	background: rgba(33, 150, 243, 0.9);
 
 	transform: translatey(0);
-	transition: transform 250ms ease;
+	transition: transform 250ms var(--timing-function);
 }
 
 .overlay-text{
@@ -705,14 +736,6 @@ calc (100% - {	сумма зазоров в строке * значение ма
 	font-size: 18px;
 	line-height: 1.55;
 }
-
-
-
-
-
-
-
-
 
 .portfolio-card{
 	padding: 20px 24px;
